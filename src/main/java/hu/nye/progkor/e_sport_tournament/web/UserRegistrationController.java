@@ -13,25 +13,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/signup")
 public class UserRegistrationController {
 
-    private UserService userService;
+  private UserService userService;
 
-    public UserRegistrationController(UserService userService) {
-        this.userService = userService;
-    }
+  public UserRegistrationController(UserService userService) {
+    this.userService = userService;
+  }
 
-    @ModelAttribute("user")
-    public UserRegistrationDto userRegistrationDto() {
-        return new UserRegistrationDto();
-    }
+  @ModelAttribute("user")
+  public UserRegistrationDto userRegistrationDto() {
+    return new UserRegistrationDto();
+  }
 
-    @GetMapping
-    public String showSignupForm(){
-        return "signup";
-    }
+  @GetMapping
+  public String showSignupForm() {
+    return "signup";
+  }
 
-    @PostMapping
-    public String registerUserAccount(@ModelAttribute("user") UserRegistrationDto registrationDto){
-        userService.save(registrationDto);
-        return "redirect:/signup?success";
-    }
+  @PostMapping
+  public String registerUserAccount(@ModelAttribute("user") UserRegistrationDto registrationDto) {
+    userService.save(registrationDto);
+    return "redirect:/signup?success";
+  }
 }

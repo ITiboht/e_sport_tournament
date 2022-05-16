@@ -23,7 +23,6 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <a style="color:white" class="nav-item nav-link" href="/" th:href="@{/}">Home</a>
-            <a style="color:white" class="nav-item nav-link" href="/" th:href="@{/games}">Games</a>
             <a style="color:white" class="nav-item nav-link active" href="#">Matches</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
@@ -33,6 +32,7 @@
         </div>
     </div>
 </nav>
+<!--
 <div class="dropdown">
     <label style="color:white;" for="games">Choose a game:</label>
     <select name="games" id="games">
@@ -42,5 +42,53 @@
         <option value="sc2">Starcraft 2</option>
     </select>
 </div>
+-->
+
+<div class="container">
+    <h3 class="pt-5" style="color:white;">Match-ek:</h3>
+
+    <a th:href="@{/e-sport/create}"
+       type="button"
+       class="btn btn-info" style="color:white;">Új e-sport match hozzá adása:</a>
+
+    <table class="table table-striped pt-5">
+        <caption style="color:white;">Match-ek:</caption>
+        <thread>
+            <tr>
+                <th scope="col" style="color:white;">#</th>
+                <th scope="col" style="color:white;">Játék</th>
+                <th scope="col" style="color:white;">Dátum</th>
+                <th scope="col" style="color:white;">Csapat 1:</th>
+                <th scope="col" style="color:white;">Csapat 1 pontok:</th>
+                <th></th>
+                <th scope="col" style="color:white;">Csapat 2 pontok:</th>
+                <th scope="col" style="color:white;">Csapat 2:</th>
+                <th scope="col" style="color:white;">Műveletek</th>
+            </tr>
+        </thread>
+        <tbody>
+        <tr th:each="match: ${matches}">
+            <th scope="row"
+                th:text="${match.id}" style="color:white;"></th>
+            <td th:text="${match.game}" style="color:white;"></td>
+            <td th:text="${match.date_of_match}" style="color:white;"></td>
+            <td th:text="${match.name_of_team_1}" style="color:white;"></td>
+            <td th:text="${match.points_of_team_1}" style="color:white;" align="right"></td>
+            <td style="color:white;">-</td>
+            <td th:text="${match.points_of_team_2}" style="color:white;"></td>
+            <td th:text="${match.name_of_team_2}" style="color:white;"></td>
+            <td>
+                <a th:href="@{'/e-sport/' + ${match.id}}"
+                   type="button"
+                   class="btn btn-warning">Szerkesztés</a>
+                <a th:href="@{'/e-sport/' + ${match.id} +  '/delete'}"
+                   type="button"
+                   class="btn btn-danger">Törlés</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
 </body>
 </html>

@@ -6,11 +6,14 @@ import java.util.List;
 
 public interface ESportService {
 
-    List<Match> getAllMatches();
-    Match getMatch(Long id);
-    Match createMatch(Match match);
-    Match updateMatch(Long id, Match matchUpdate);
+  List<Match> getAllMatches();
 
-    void deleteMatch(Long id);
+  Match getMatch(Long id);
+
+  Match createMatch(Match match);
+
+  Match updateMatch(Long id, Match matchUpdate);
+
+  void deleteMatch(Long id);
 
 }

@@ -72,6 +72,24 @@
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>5.1.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>webjars-locator</artifactId>
+			<version>0.42</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>3.6.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -80,6 +98,7 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${project.parent.version}</version>
 			</plugin>
 
 			<plugin>
@@ -115,6 +134,8 @@
 						<exclude>hu\nye\progkor\e_sport_tournament\controller\**</exclude>
 						<exclude>hu\nye\progkor\e_sport_tournament\model\**</exclude>
 						<exclude>hu\nye\progkor\e_sport_tournament\ESportTournamentApplication.class</exclude>
+						<exclude>hu\nye\progkor\e_sport_tournament\web\**</exclude>
+						<exclude>hu\nye\progkor\e_sport_tournament\repository\**</exclude>
 						<exclude>*Test</exclude>
 					</excludes>
 					<rules>
