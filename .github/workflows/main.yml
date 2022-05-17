@@ -39,7 +39,7 @@ jobs:
         # Overwrite local artifact version
         mvn -B versions:set -DnewVersion="$version" --file pom.xml
         mvn -B deploy --file pom.xml
-        cp "target/e_sport_tournament-${version}.jar" "target/e_sport_tournament.jar"
+        cp "target/esport-${version}.jar" "target/esport.jar"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Log in to the Container registry
