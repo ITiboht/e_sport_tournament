@@ -17,10 +17,12 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -90,10 +92,30 @@
 			<version>3.6.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.5.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.5.1</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
 		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M6</version>
+			</plugin>
 
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -130,12 +152,12 @@
 				</executions>
 				<configuration>
 					<excludes>
-						<exclude>hu\nye\progkor\e_sport_tournament\config\**</exclude>
-						<exclude>hu\nye\progkor\e_sport_tournament\controller\**</exclude>
-						<exclude>hu\nye\progkor\e_sport_tournament\model\**</exclude>
-						<exclude>hu\nye\progkor\e_sport_tournament\ESportTournamentApplication.class</exclude>
-						<exclude>hu\nye\progkor\e_sport_tournament\web\**</exclude>
-						<exclude>hu\nye\progkor\e_sport_tournament\repository\**</exclude>
+						<exclude>hu\nye\progkor\esport\config\**</exclude>
+						<exclude>hu\nye\progkor\esport\controller\**</exclude>
+						<exclude>hu\nye\progkor\esport\model\**</exclude>
+						<exclude>hu\nye\progkor\esport\ESportTournamentApplication.class</exclude>
+						<exclude>hu\nye\progkor\esport\web\**</exclude>
+						<exclude>hu\nye\progkor\esport\repository\**</exclude>
 						<exclude>*Test</exclude>
 					</excludes>
 					<rules>
