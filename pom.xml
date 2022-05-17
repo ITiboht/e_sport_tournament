@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -17,10 +17,12 @@
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -130,12 +132,12 @@
 				</executions>
 				<configuration>
 					<excludes>
-						<exclude>hu\nye\progkor\e_sport_tournament\config\**</exclude>
-						<exclude>hu\nye\progkor\e_sport_tournament\controller\**</exclude>
-						<exclude>hu\nye\progkor\e_sport_tournament\model\**</exclude>
-						<exclude>hu\nye\progkor\e_sport_tournament\ESportTournamentApplication.class</exclude>
-						<exclude>hu\nye\progkor\e_sport_tournament\web\**</exclude>
-						<exclude>hu\nye\progkor\e_sport_tournament\repository\**</exclude>
+						<exclude>hu\nye\progkor\esport\config\**</exclude>
+						<exclude>hu\nye\progkor\esport\controller\**</exclude>
+						<exclude>hu\nye\progkor\esport\model\**</exclude>
+						<exclude>hu\nye\progkor\esport\ESportTournamentApplication.class</exclude>
+						<exclude>hu\nye\progkor\esport\web\**</exclude>
+						<exclude>hu\nye\progkor\esport\repository\**</exclude>
 						<exclude>*Test</exclude>
 					</excludes>
 					<rules>
@@ -145,12 +147,12 @@
 								<limit>
 									<counter>LINE</counter>
 									<value>COVEREDRATIO</value>
-									<minimum>0%</minimum>
+									<minimum>40%</minimum>
 								</limit>
 								<limit>
 									<counter>BRANCH</counter>
 									<value>COVEREDRATIO</value>
-									<minimum>0%</minimum>
+									<minimum>40%</minimum>
 								</limit>
 							</limits>
 						</rule>
@@ -158,6 +160,7 @@
 				</configuration>
 			</plugin>
 
+			<!--
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
@@ -195,6 +198,7 @@
 					</execution>
 				</executions>
 			</plugin>
+			-->
 
 		</plugins>
 	</build>
