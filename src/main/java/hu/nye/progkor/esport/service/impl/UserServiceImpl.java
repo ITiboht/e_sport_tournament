@@ -32,7 +32,10 @@ public class UserServiceImpl implements UserService {
 
   @Override
   public User save(UserRegistrationDto registrationDto) {
-    User user = new User(registrationDto.getUsername(), registrationDto.getEmail(), passwordEncoder.encode(registrationDto.getPassword()), Arrays.asList(new Role("ROLE_USER")));
+    User user = new User(registrationDto.getUsername(),
+            registrationDto.getEmail(),
+            passwordEncoder.encode(registrationDto.getPassword()),
+            Arrays.asList(new Role("ROLE_USER")));
 
     return userRepository.save(user);
   }
@@ -45,12 +48,15 @@ public class UserServiceImpl implements UserService {
     if (user == null) {
       throw new UsernameNotFoundException("Invalid username or password.");
     }
-    return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), mapRolesToAuthorities(user.getRoles()));
+    return new org.springframework.security.core.userdetails.User(user.getEmail(),
+            user.getPassword(),
+            mapRolesToAuthorities(user.getRoles()));
   }
 
   private Collection<? extends GrantedAuthority> mapRolesToAuthorities(Collection<Role> roles) {
 
-    return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
+    return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName()))
+            .collect(Collectors.toList());
 
   }
 

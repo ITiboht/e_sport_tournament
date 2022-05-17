@@ -4,7 +4,7 @@ import hu.nye.progkor.esport.model.Match;
 
 import java.util.List;
 
-public interface ESportService {
+public interface EsportService {
 
   List<Match> getAllMatches();
 

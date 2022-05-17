@@ -1,7 +1,7 @@
 package hu.nye.progkor.esport.controller;
 
 import hu.nye.progkor.esport.model.Match;
-import hu.nye.progkor.esport.service.ESportService;
+import hu.nye.progkor.esport.service.EsportService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,41 +20,41 @@ import java.util.List;
 @RequestMapping("/api/v1/e-sport")
 public class MatchRestController {
 
-  private ESportService eSportService;
+  private EsportService esportService;
 
-  public MatchRestController(ESportService eSportService) {
-    this.eSportService = eSportService;
+  public MatchRestController(EsportService esportService) {
+    this.esportService = esportService;
   }
 
   @GetMapping
   public List<Match> getAllMatches() {
-    return eSportService.getAllMatches();
+    return esportService.getAllMatches();
   }
 
   @GetMapping("/{id}")
   Match getMatch(final @PathVariable("id") Long id) {
 
-    return eSportService.getMatch(id);
+    return esportService.getMatch(id);
 
   }
 
   @PostMapping
   Match createMatch(final @RequestBody Match match) {
 
-    return eSportService.createMatch(match);
+    return esportService.createMatch(match);
 
   }
 
   @PutMapping("/{id}")
   Match updateMatch(final @PathVariable Long id, final @RequestBody Match matchUpdate) {
 
-    return eSportService.updateMatch(id, matchUpdate);
+    return esportService.updateMatch(id, matchUpdate);
 
   }
 
   @DeleteMapping("/{id}")
   ResponseEntity<Void> deleteMatch(final @PathVariable Long id) {
-    eSportService.deleteMatch(id);
+    esportService.deleteMatch(id);
     return new ResponseEntity<>(HttpStatus.NO_CONTENT);
   }
 

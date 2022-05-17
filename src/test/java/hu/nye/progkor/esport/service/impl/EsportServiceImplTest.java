@@ -3,7 +3,7 @@ package hu.nye.progkor.esport.service.impl;
 import hu.nye.progkor.esport.model.Game;
 import hu.nye.progkor.esport.model.Match;
 import hu.nye.progkor.esport.model.exception.NotFoundException;
-import hu.nye.progkor.esport.service.ESportService;
+import hu.nye.progkor.esport.service.EsportService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class ESportServiceImplTest {
+class EsportServiceImplTest {
 
   private static final Match LEAGUE_ESPORT_1 = new Match(1L, "2022:05:15", "DFM", "T1", 0, 1, Game.LeagueOfLegends);
   private static final Match LEAGUE_ESPORT_2 = new Match(2L, "2022:05:15", "AZE", "SGB", 0, 1, Game.LeagueOfLegends);
@@ -23,11 +23,11 @@ class ESportServiceImplTest {
   public static final long UNKNOWN_MATCH_ID = -1L;
   public static final String ESPORT_GAME_TEAM_1 = "G2 Esports";
 
-  private ESportService underTest;
+  private EsportService underTest;
 
   @BeforeEach
   void setUp() {
-    underTest = new ESportServiceImpl(ESPORT_MATCHES);
+    underTest = new EsportServiceImpl(ESPORT_MATCHES);
   }
 
   /*

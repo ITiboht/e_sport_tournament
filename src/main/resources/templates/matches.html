@@ -71,12 +71,12 @@
             <th scope="row"
                 th:text="${match.id}" style="color:white;"></th>
             <td th:text="${match.game}" style="color:white;"></td>
-            <td th:text="${match.date_of_match}" style="color:white;"></td>
-            <td th:text="${match.name_of_team_1}" style="color:white;"></td>
-            <td th:text="${match.points_of_team_1}" style="color:white;" align="right"></td>
+            <td th:text="${match.dateOfMatch}" style="color:white;"></td>
+            <td th:text="${match.nameOfTeam1}" style="color:white;"></td>
+            <td th:text="${match.pointsOfTeam1}" style="color:white;" align="right"></td>
             <td style="color:white;">-</td>
-            <td th:text="${match.points_of_team_2}" style="color:white;"></td>
-            <td th:text="${match.name_of_team_2}" style="color:white;"></td>
+            <td th:text="${match.pointsOfTeam2}" style="color:white;"></td>
+            <td th:text="${match.nameOfTeam2}" style="color:white;"></td>
             <td>
                 <a th:href="@{'/e-sport/' + ${match.id}}"
                    type="button"

@@ -7,15 +7,15 @@ public class Match {
 
   private Long id;
 
-  private String date_of_match;
+  private String dateOfMatch;
 
-  private String name_of_team_1;
+  private String nameOfTeam1;
 
-  private String name_of_team_2;
+  private String nameOfTeam2;
 
-  private int points_of_team_1;
+  private int pointsOfTeam1;
 
-  private int points_of_team_2;
+  private int pointsOfTeam2;
 
   private Game game;
 
@@ -23,13 +23,19 @@ public class Match {
 
   }
 
-  public Match(Long id, String date_of_match, String name_of_team_1, String name_of_team_2, int points_of_team_1, int points_of_team_2, Game game) {
+  public Match(Long id,
+               String dateOfMatch,
+               String nameOfTeam1,
+               String nameOfTeam2,
+               int pointsOfTeam1,
+               int pointsOfTeam2,
+               Game game) {
     this.id = id;
-    this.date_of_match = date_of_match;
-    this.name_of_team_1 = name_of_team_1;
-    this.name_of_team_2 = name_of_team_2;
-    this.points_of_team_1 = points_of_team_1;
-    this.points_of_team_2 = points_of_team_2;
+    this.dateOfMatch = dateOfMatch;
+    this.nameOfTeam1 = nameOfTeam1;
+    this.nameOfTeam2 = nameOfTeam2;
+    this.pointsOfTeam1 = pointsOfTeam1;
+    this.pointsOfTeam2 = pointsOfTeam2;
     this.game = game;
   }
 
@@ -41,44 +47,44 @@ public class Match {
     this.id = id;
   }
 
-  public String getDate_of_match() {
-    return date_of_match;
+  public String getDateOfMatch() {
+    return dateOfMatch;
   }
 
-  public void setDate_of_match(String date_of_match) {
-    this.date_of_match = date_of_match;
+  public void setDateOfMatch(String dateOfMatch) {
+    this.dateOfMatch = dateOfMatch;
   }
 
-  public String getName_of_team_1() {
-    return name_of_team_1;
+  public String getNameOfTeam1() {
+    return nameOfTeam1;
   }
 
-  public void setName_of_team_1(String name_of_team_1) {
-    this.name_of_team_1 = name_of_team_1;
+  public void setNameOfTeam1(String nameOfTeam1) {
+    this.nameOfTeam1 = nameOfTeam1;
   }
 
-  public String getName_of_team_2() {
-    return name_of_team_2;
+  public String getNameOfTeam2() {
+    return nameOfTeam2;
   }
 
-  public void setName_of_team_2(String name_of_team_2) {
-    this.name_of_team_2 = name_of_team_2;
+  public void setNameOfTeam2(String nameOfTeam2) {
+    this.nameOfTeam2 = nameOfTeam2;
   }
 
-  public int getPoints_of_team_1() {
-    return points_of_team_1;
+  public int getPointsOfTeam1() {
+    return pointsOfTeam1;
   }
 
-  public void setPoints_of_team_1(int points) {
-    this.points_of_team_1 = points;
+  public void setPointsOfTeam1(int points) {
+    this.pointsOfTeam1 = points;
   }
 
-  public int getPoints_of_team_2() {
-    return points_of_team_2;
+  public int getPointsOfTeam2() {
+    return pointsOfTeam2;
   }
 
-  public void setPoints_of_team_2(int points_of_team_2) {
-    this.points_of_team_2 = points_of_team_2;
+  public void setPointsOfTeam2(int pointsOfTeam2) {
+    this.pointsOfTeam2 = pointsOfTeam2;
   }
 
   public Game getGame() {
@@ -91,27 +97,61 @@ public class Match {
 
   @Override
   public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
     Match match = (Match) o;
-    return points_of_team_1 == match.points_of_team_1 && points_of_team_2 == match.points_of_team_2 && Objects.equals(id, match.id) && Objects.equals(date_of_match, match.date_of_match) && Objects.equals(name_of_team_1, match.name_of_team_1) && Objects.equals(name_of_team_2, match.name_of_team_2) && game == match.game;
+    return pointsOfTeam1 == match.pointsOfTeam1
+            &&
+            pointsOfTeam2 == match.pointsOfTeam2
+            &&
+            Objects.equals(id, match.id)
+            &&
+            Objects.equals(dateOfMatch, match.dateOfMatch)
+            &&
+            Objects.equals(nameOfTeam1, match.nameOfTeam1)
+            &&
+            Objects.equals(nameOfTeam2, match.nameOfTeam2)
+            &&
+            game == match.game;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, date_of_match, name_of_team_1, name_of_team_2, points_of_team_1, points_of_team_2, game);
+    return Objects.hash(id,
+            dateOfMatch,
+            nameOfTeam1,
+            nameOfTeam2,
+            pointsOfTeam1,
+            pointsOfTeam2, game);
   }
 
   @Override
   public String toString() {
-    return "Match{" +
-            "id=" + id +
-            ", date_of_match='" + date_of_match + '\'' +
-            ", name_of_team_1='" + name_of_team_1 + '\'' +
-            ", name_of_team_2='" + name_of_team_2 + '\'' +
-            ", points_of_team_1=" + points_of_team_1 +
-            ", points_of_team_2=" + points_of_team_2 +
-            ", game=" + game +
+    return "Match{"
+            + "id=" + id
+            +
+            ", date_of_match='"
+            + dateOfMatch + '\''
+            +
+            ", name_of_team_1='"
+            + nameOfTeam1 + '\''
+            +
+            ", name_of_team_2='"
+            + nameOfTeam2 + '\''
+            +
+            ", points_of_team_1="
+            + pointsOfTeam1
+            +
+            ", points_of_team_2="
+            + pointsOfTeam2
+            +
+            ", game="
+            + game
+            +
             '}';
   }
 }
