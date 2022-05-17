@@ -33,7 +33,7 @@ public class EsportServiceImpl implements EsportService {
 
   @Override
   public Match getMatch(final Long id) {
-    return DATA_BASE.stream().filter(Match -> Match.getId()
+    return DATA_BASE.stream().filter(match -> match.getId()
                     .equals(id))
             .findFirst()
             .orElseThrow(NotFoundException::new);

@@ -17,16 +17,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/e-sport")
 public class MatchController {
 
-  private final EsportService eSportService;
+  private final EsportService esportService;
 
-  public MatchController(final EsportService eSportService) {
-    this.eSportService = eSportService;
+  public MatchController(final EsportService esportService) {
+    this.esportService = esportService;
   }
 
   @GetMapping
   public String getAllMatches(final Model model) {
 
-    final List<Match> matches = eSportService.getAllMatches();
+    final List<Match> matches = esportService.getAllMatches();
     model.addAttribute("matches", matches);
     return "matches";
 
@@ -35,7 +35,7 @@ public class MatchController {
   @GetMapping("/{id}")
   public String getMatches(final Model model, final @PathVariable Long id) {
 
-    final Match match = eSportService.getMatch(id);
+    final Match match = esportService.getMatch(id);
     model.addAttribute("match", match);
     return "edit";
 
@@ -48,7 +48,7 @@ public class MatchController {
                             ) Long id,
                             final Match matchChanges) {
 
-    final Match match = eSportService.updateMatch(id, matchChanges);
+    final Match match = esportService.updateMatch(id, matchChanges);
     model.addAttribute("match", match);
     return "edit";
 
@@ -57,7 +57,7 @@ public class MatchController {
   @GetMapping("/create")
   public String createMatch(final Model model, final Match match) {
 
-    final Match savedMatch = eSportService.createMatch(match);
+    final Match savedMatch = esportService.createMatch(match);
     model.addAttribute("match", savedMatch);
     return "edit";
 
@@ -67,11 +67,11 @@ public class MatchController {
   public String deleteMatch(final Model model, final @PathVariable("id") Long id) {
 
     try {
-      eSportService.deleteMatch(id);
+      esportService.deleteMatch(id);
     } catch (NotFoundException e) {
       //Ignored
     }
-    final List<Match> matches = eSportService.getAllMatches();
+    final List<Match> matches = esportService.getAllMatches();
     model.addAttribute("matches", matches);
     return "matches";
   }
